@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.">
+  <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+
+</head>
+<body class="">
+<!-- Docs master nav -->
+<!--<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">-->
+  <div class="container-header">
+    <nav class="collapse navbar-collapse bs-navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="javascript:void(0);">Home</a>
+        </li>
+        <li>
+          <a href="javascript:void(0);">About</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="javascript:void(0);">Sign In</a></li>
+        <li><a href="javascript:void(0);">Register</a></li>
+      </ul>
+    </nav>
+  </div>
+<!--</header>-->
+<main class="bs-docs-masthead" id="content" role="main" tabindex="-1">
+  <div class="container">
+    <span class=""><img src="assets/logo-motorbike.png"/></span>
+    <p class="lead">Dont worry If you forgot your stuff!!! We Delivery in a trusted way :)</p>
+    <marquee scrollamount="10"></span><p class="lead">Deliver in less than 40 MINS !!! </p></marquee>
+  </div>
+</main>
+  <div class="bs-docs-featurette">
+     <p class="lead">Fill up your Information we will contact you less than a minute.</p>
+  </div>
+
+<form>
+  <%= form_for @user, :url => {:controller => :users, action: :create} do |f| %>
+      <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this news from being saved:</h2>
+
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+     <% end %>
+  <div class="col-md-4 col-md-offset-4">
+    <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
+    <div class="form-group">
+      <label for="InputName">Enter Name</label>
+      <div class="input-group">
+        <%= f.text_field :name, :class=>"form-control",:name=>"name", :id=>"name", :placeholder=>"Enter Name", :required=>"" %>
+        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="InputEmail">Enter Email</label>
+      <div class="input-group">
+        <%= f.text_field :email,:class=>"form-control", :id=>"InputEmailFirst", :name=>"email", :placeholder=>"Enter Email", :required=>"" %>
+        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="InputEmail">Phone Number</label>
+      <div class="input-group">
+        <%= f.text_field :phone, :class=>"form-control", :id=>"InputEmailFirst", :name=>"phone", :placeholder=>"Phone Number", :required=>"" %>
+        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+      </div>
+    </div>
+    <%= f.submit :name=>"submit", :class=>"btn btn-info pull-right" %>
+  </div>
+</form>
+<%end%>
+
+<section id="contact">
+<div class="bs-docs-featurette">
+<div class="col-md-12 col-md-offset-0", style="background-color: #695b99">
+  <h2>Contact</h2>
+  <p>Feel free to email us to provide some feedback!</p>
+  <p><a href="">likithzypher@gmail.com.com</a>
+  </p>
+  <ul class="list-inline banner-social-buttons">
+    <li>
+      <a href="" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+    </li>
+    <li>
+      <a href="" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Facebook</span></a>
+    </li>
+  </ul>
+</div>
+    </div>
+</section>
+</body>
+</html>
