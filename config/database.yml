@@ -12,3 +12,11 @@ development:
   host: localhost
   database: fastermen_development
   pool: 25
+production:
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: postgres
+  host: localhost
+  database: fastermen_development
+  pool: 25
